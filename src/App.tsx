@@ -14,7 +14,7 @@ function App() {
       outline: none;
       list-style: none;
       text-decoration: none;
-      font-family: "Baloo Paaji", "Shrikhand", "GothicA1-Medium", sans-serif;
+      font-family: "Shrikhand", "Baloo Paaji", "GothicA1-Medium", sans-serif;
     }
     
     body {
