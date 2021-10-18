@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { overflowing, flexCenter, flexCenterDir, color } from "../utils/theme";
-import Three from "../components/Three";
-import Nav from "./Nav";
 
-// 이미지
-import name from "../img/name.svg";
-import email from "../img/@.svg";
-import birthday from "../img/birthday.svg";
-import address from "../img/address.svg";
+// 컴포넌트
+import Nav from "./Nav";
+import Three from "../components/Three";
+import About from "../components/About";
+import Skill from "../components/Skill";
+import Archive from "../components/Archive";
+import Project from "../components/Project";
 
 const MainSection = styled.ul`
 	display: flex;
@@ -23,7 +23,7 @@ const MainSection = styled.ul`
 
 		justify-content: flex-start;
 		min-width: 100%;
-		min-height: 100vh;
+		/* min-height: 100vh; */
 		padding: 1rem;
 		box-sizing: border-box;
 	}
@@ -57,140 +57,6 @@ const FirstBox = styled.li`
 	}
 `;
 
-const AboutBox = styled.li`
-	${flexCenter}
-
-	.item-box {
-		${flexCenter}
-
-		flex-wrap: wrap;
-	}
-
-	.title {
-		margin-bottom: 3rem;
-	}
-`;
-
-const AboutItem = styled.div`
-	display: flex;
-	width: 250px;
-	height: 80px;
-	margin: 3rem;
-	padding: 1rem;
-	border-radius: 2vh;
-	box-shadow: 5px 5px 5px 2px lightgray;
-
-	&:hover {
-		transform: translateY(15px);
-		transition-duration: 0.7s;
-	}
-
-	.imgbox {
-		min-width: 80px;
-		min-height: 80px;
-		width: 80px;
-		height: 80px;
-		margin-right: 1rem;
-	}
-
-	img {
-		width: 100%;
-		height: 100%;
-	}
-
-	.item {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-
-		span {
-			text-align: left;
-			font-size: 1rem;
-		}
-	}
-
-	.sub-title {
-		font-weight: bold;
-		margin-bottom: 1rem;
-
-		&:hover {
-			border-bottom: 4px solid ${color.point};
-		}
-	}
-`;
-
-const SkillBox = styled.li`
-	background: ${color.dark};
-	color: white;
-
-	.item-box {
-		${flexCenter}
-
-		flex-wrap: wrap;
-	}
-`;
-
-const SkillItem = styled.div`
-	${flexCenterDir}
-
-	width: 300px;
-	background: white;
-	padding: 1rem;
-	color: black;
-	border-radius: 2vh;
-	margin: 2rem;
-
-	&:hover {
-		transform: translateY(-20px);
-		transition-duration: 0.7s;
-	}
-`;
-
-const ArchiveBox = styled.li`
-	.item-box {
-		${flexCenter}
-
-		flex-wrap: wrap;
-	}
-`;
-
-const ArchiveItem = styled.div`
-	${flexCenterDir}
-
-	width: 300px;
-	background: white;
-	padding: 1rem;
-	color: black;
-	border-radius: 2vh;
-	margin: 2rem;
-	box-shadow: 5px 5px 5px lightgray;
-
-	&:hover {
-		transform: translateY(-20px);
-		transition-duration: 0.7s;
-	}
-`;
-
-const ProjectBox = styled.li`
-	background: #1e90ff;
-`;
-
-const ProjectItem = styled.div`
-	${flexCenterDir}
-
-	width: 300px;
-	background: white;
-	padding: 1rem;
-	color: black;
-	border-radius: 2vh;
-	margin: 2rem;
-
-	&:hover {
-		transform: translateY(-20px);
-		transition-duration: 0.7s;
-	}
-`;
-
 const Main = () => {
 	return (
 		<MainSection>
@@ -205,62 +71,10 @@ const Main = () => {
 				</span>
 				<Three />
 			</FirstBox>
-			<AboutBox>
-				<h1 className="title">About</h1>
-				<div className="item-box">
-					{[
-						{ img: name, title: "이름", description: "이성훈" },
-						{ img: email, title: "이메일", description: "kusdsuna@naver.com" },
-						{ img: birthday, title: "생년월일", description: "96. 02. 26" },
-						{ img: address, title: "주소", description: "경기도 의왕" },
-					].map((el) => {
-						return (
-							<AboutItem>
-								<div className="imgbox">
-									<img src={el.img} alt="img" />
-								</div>
-								<div className="item">
-									<span className="sub-title">{el.title}</span>
-									<span>{el.description}</span>
-								</div>
-							</AboutItem>
-						);
-					})}
-				</div>
-			</AboutBox>
-			<SkillBox>
-				<h1 className="title">Skill</h1>
-				<div className="item-box">
-					<SkillItem>
-						<h2>Front end</h2>
-						React, HTML5, CSS3, JavaScript, TypeScript, Styled-components,
-						Next.js
-					</SkillItem>
-					<SkillItem>
-						<h2>other</h2>
-						Git, Github, Notion, Figma, Vercel
-					</SkillItem>
-				</div>
-			</SkillBox>
-			<ArchiveBox>
-				<h1 className="title">Archive</h1>
-				<div className="item-box">
-					<ArchiveItem>
-						<h2>Github</h2>
-					</ArchiveItem>
-					<ArchiveItem>
-						<h2>velog</h2>
-					</ArchiveItem>
-				</div>
-			</ArchiveBox>
-			<ProjectBox>
-				<h1 className="title">Project</h1>
-				<div className="item-box">
-					<ProjectItem>
-						<h2>프로젝트명</h2>
-					</ProjectItem>
-				</div>
-			</ProjectBox>
+			<About />
+			<Skill />
+			<Archive />
+			<Project />
 			{/* <li>
 				<h1 className="title">Career</h1>
 			</li> */}
