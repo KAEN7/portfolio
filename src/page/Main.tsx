@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 import { overflowing, flexCenter, flexCenterDir, color } from "../utils/theme";
 
@@ -57,11 +57,45 @@ const FirstBox = styled.li`
 	}
 `;
 
-const Main = () => {
+const Main: React.FC = () => {
+	// const toFirst = useRef<any>(null);
+	// const toAbout = useRef<any>(null);
+	// const toSkill = useRef<any>(null);
+	// const toArchive = useRef<any>(null);
+	// const toProject = useRef<any>(null);
+
+	const handleToFirst = useCallback(() => {
+		// toFirst.current.scrollIntoView({ behavior: "smooth" });
+		document.querySelector(".first")?.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
+	const handleToAbout = useCallback(() => {
+		// toAbout.current.scrollIntoView({ behavior: "smooth" });
+		document.querySelector(".about")?.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
+	const handleToSkill = useCallback(() => {
+		// toSkill.current.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
+	const handleToArchive = useCallback(() => {
+		// toArchive.current.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
+	const handleToProject = useCallback(() => {
+		// toProject.current.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
 	return (
 		<MainSection>
-			<Nav />
-			<FirstBox>
+			<Nav
+				handleToFirst={handleToFirst}
+				handleToAbout={handleToAbout}
+				handleToSkill={handleToSkill}
+				handleToArchive={handleToArchive}
+				handleToProject={handleToProject}
+			/>
+			<FirstBox className="first">
 				<h1 className="title">{`< 이성훈 />`}</h1>
 				<h2>프론트엔드 포트폴리오</h2>
 				<span>
@@ -71,10 +105,10 @@ const Main = () => {
 				</span>
 				<Three />
 			</FirstBox>
-			<About />
-			<Skill />
-			<Archive />
-			<Project />
+			<About className="about" />
+			<Skill className="skill" />
+			<Archive className="archive" />
+			<Project className="project" />
 			{/* <li>
 				<h1 className="title">Career</h1>
 			</li> */}

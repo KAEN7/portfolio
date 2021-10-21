@@ -29,13 +29,33 @@ const NavSection = styled.div`
 	}
 `;
 
-const Nav = () => {
+interface NavProps {
+	handleToFirst: any;
+	handleToAbout: any;
+	handleToSkill: any;
+	handleToArchive: any;
+	handleToProject: any;
+}
+
+const Nav: React.FC<NavProps> = ({
+	handleToFirst,
+	handleToAbout,
+	handleToSkill,
+	handleToArchive,
+	handleToProject,
+}) => {
 	return (
 		<NavSection>
 			<Link to="/" className="logo">
 				<h1>LSH's Portfolio</h1>
 			</Link>
-			<></>
+			<>
+				<div onClick={handleToFirst}>First</div>
+				<div onClick={handleToAbout}>About</div>
+				<div onClick={handleToSkill}>Skill</div>
+				<div onClick={handleToArchive}>Archive</div>
+				<div onClick={handleToProject}>Project</div>
+			</>
 		</NavSection>
 	);
 };

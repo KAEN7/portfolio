@@ -43,7 +43,7 @@ const ProjectItem = styled.div`
 	}
 `;
 
-const Project = () => {
+const Project: React.FC = () => {
 	return (
 		<ProjectBox>
 			<h1 className="title">Project</h1>

@@ -63,10 +63,6 @@ const AboutItem = styled.div`
 	.sub-title {
 		font-weight: bold;
 		margin-bottom: 1rem;
-
-		&:hover {
-			border-bottom: 4px solid ${color.point};
-		}
 	}
 `;
 
