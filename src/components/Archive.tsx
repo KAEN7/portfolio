@@ -33,7 +33,7 @@ const ArchiveItem = styled.div`
 
 const Archive = () => {
 	return (
-		<ArchiveBox>
+		<ArchiveBox className="archive">
 			<h1 className="title">Archive</h1>
 			<div className="item-box">
 				<ArchiveItem>

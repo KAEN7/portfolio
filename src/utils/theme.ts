@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
 // 기기 사이즈
 export const size = {
@@ -53,6 +53,25 @@ export const flexCenterDir = css`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+`;
+
+export const buttonStyle = css`
+	${flexCenter}
+
+	width: 10rem;
+	height: 4rem;
+	background: white;
+	box-shadow: 2px 2px 2px darkgray;
+	border-radius: 2vh;
+	font-size: 2rem;
+	color: ${color.point};
+	text-shadow: 2px 2px 2px darkgray;
+	margin-left: 2rem;
+
+	&:hover {
+		transform: translateY(-10px);
+		transition-duration: 0.7s;
+	}
 `;
 
 export default theme;

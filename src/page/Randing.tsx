@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { flexCenter, color } from "../utils/theme";
+import { flexCenter, color, buttonStyle } from "../utils/theme";
 
 const RandingSection = styled.div`
 	@import "https://fonts.googleapis.com/css?family=Baloo+Paaji";
@@ -8,7 +9,7 @@ const RandingSection = styled.div`
 	width: 100vw;
 	height: 100vh;
 	font-family: "Baloo Paaji", cursive;
-	/* background: #1e90ff; */
+	background: ${color.dark};
 	${flexCenter}
 
 	.container {
@@ -103,6 +104,10 @@ const RandingSection = styled.div`
 			clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
 		}
 	}
+
+	.startBtn {
+		${buttonStyle}
+	}
 `;
 
 const Randing = () => {
@@ -121,6 +126,9 @@ const Randing = () => {
 					<span>이성훈입니다</span>
 				</h2>
 			</section>
+			<Link to="/main" className="startBtn">
+				Start
+			</Link>
 			<span className="usechrome">LSH's portfolio</span>
 		</RandingSection>
 	);

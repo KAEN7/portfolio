@@ -50,7 +50,7 @@ const SkillItem = styled.div`
 
 const Skill = () => {
 	return (
-		<SkillBox>
+		<SkillBox className="skill">
 			<h1 className="title">Skill</h1>
 			<div className="item-box">
 				<SkillItem>

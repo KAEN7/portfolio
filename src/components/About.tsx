@@ -68,7 +68,7 @@ const AboutItem = styled.div`
 
 const About = () => {
 	return (
-		<AboutBox>
+		<AboutBox className="about">
 			<h1 className="title">About</h1>
 			<div className="item-box">
 				{[

@@ -57,17 +57,16 @@ const FirstBox = styled.li`
 	}
 `;
 
-const Main: React.FC = () => {
-	// const toFirst = useRef<any>(null);
-	// const toAbout = useRef<any>(null);
+const Main = () => {
+	// const toAbout = useRef();
 	// const toSkill = useRef<any>(null);
 	// const toArchive = useRef<any>(null);
 	// const toProject = useRef<any>(null);
 
-	const handleToFirst = useCallback(() => {
-		// toFirst.current.scrollIntoView({ behavior: "smooth" });
-		document.querySelector(".first")?.scrollIntoView({ behavior: "smooth" });
-	}, []);
+	// const handleToFirst = useCallback(() => {
+	// 	toFirst.current.scrollIntoView({ behavior: "smooth" });
+	// 	// document.querySelector(".first")?.scrollIntoView({ behavior: "smooth" });
+	// }, []);
 
 	const handleToAbout = useCallback(() => {
 		// toAbout.current.scrollIntoView({ behavior: "smooth" });
@@ -76,20 +75,22 @@ const Main: React.FC = () => {
 
 	const handleToSkill = useCallback(() => {
 		// toSkill.current.scrollIntoView({ behavior: "smooth" });
+		document.querySelector(".skill")?.scrollIntoView({ behavior: "smooth" });
 	}, []);
 
 	const handleToArchive = useCallback(() => {
 		// toArchive.current.scrollIntoView({ behavior: "smooth" });
+		document.querySelector(".archive")?.scrollIntoView({ behavior: "smooth" });
 	}, []);
 
 	const handleToProject = useCallback(() => {
 		// toProject.current.scrollIntoView({ behavior: "smooth" });
+		document.querySelector(".project")?.scrollIntoView({ behavior: "smooth" });
 	}, []);
 
 	return (
 		<MainSection>
 			<Nav
-				handleToFirst={handleToFirst}
 				handleToAbout={handleToAbout}
 				handleToSkill={handleToSkill}
 				handleToArchive={handleToArchive}
@@ -105,10 +106,10 @@ const Main: React.FC = () => {
 				</span>
 				<Three />
 			</FirstBox>
-			<About className="about" />
-			<Skill className="skill" />
-			<Archive className="archive" />
-			<Project className="project" />
+			<About />
+			<Skill />
+			<Archive />
+			<Project />
 			{/* <li>
 				<h1 className="title">Career</h1>
 			</li> */}

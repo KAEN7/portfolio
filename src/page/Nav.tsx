@@ -29,8 +29,18 @@ const NavSection = styled.div`
 	}
 `;
 
+const NavBtn = styled.div`
+	display: flex;
+	justify-content: space-between;
+	width: 15rem;
+
+	div:hover {
+		cursor: pointer;
+		text-shadow: 2px 2px 5px ${color.point};
+	}
+`;
+
 interface NavProps {
-	handleToFirst: any;
 	handleToAbout: any;
 	handleToSkill: any;
 	handleToArchive: any;
@@ -38,7 +48,6 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = ({
-	handleToFirst,
 	handleToAbout,
 	handleToSkill,
 	handleToArchive,
@@ -49,13 +58,13 @@ const Nav: React.FC<NavProps> = ({
 			<Link to="/" className="logo">
 				<h1>LSH's Portfolio</h1>
 			</Link>
-			<>
-				<div onClick={handleToFirst}>First</div>
+			<NavBtn>
+				{/* <div onClick={handleToFirst}>First</div> */}
 				<div onClick={handleToAbout}>About</div>
 				<div onClick={handleToSkill}>Skill</div>
 				<div onClick={handleToArchive}>Archive</div>
 				<div onClick={handleToProject}>Project</div>
-			</>
+			</NavBtn>
 		</NavSection>
 	);
 };

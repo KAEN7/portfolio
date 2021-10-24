@@ -43,9 +43,9 @@ const ProjectItem = styled.div`
 	}
 `;
 
-const Project: React.FC = () => {
+const Project = () => {
 	return (
-		<ProjectBox>
+		<ProjectBox className="project">
 			<h1 className="title">Project</h1>
 			<div className="item-box">
 				<ProjectItem>
